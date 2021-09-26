@@ -1,26 +1,15 @@
-fun main(){
-    println("УСЛОВНО: Новостной ресурс")
-    //Лучше всего подвязывать базу данных......
-    val news = arrayOf("Статья 0: Как расти в профессии", "Статья 1: Предлагайте идеи", "Статья 2: Систематизируй личное обучение",
-    "Статья 3: Развивайте софт-скиллы")
-    for (i in 0..3) { println(news[i])
+fun main() {
+    println("Задача №2 - Люди/Человеки")
+    println("Введите количество лайков")
+    val likestxt = readLine()
+    val likes = likestxt?.toInt()
+    if (likes != null) {
+        if ((likes % 2) == 0) {
+            println("Понравилось $likes людям")
+        } else {
+            println("Понравилось $likes человеку")
+        }
     }
-
-    //Так как база Mysql в данном уроке мы не исполуем, реализуем лайки через массив, в котором будет лайк в виде цифры +1
-    val b: IntArray = intArrayOf(0, 0, 0, 0)
-//Вместо for можно взять while, так как пользователь может указать два раза
-    for(i in 0..3){
-        println("Введите номер статьи, который Вам понравился")
-        val count = readLine();
-        val eqint = count?.toInt()
-        if(b[eqint!!] == 1) println("Лайк два раза нельзя ставить") else b[eqint!!] = 1
-    }
-    val likes = b.sum()
-    for (i in 0..3) {
-        println(news[i] + " | Понравилось  - "+ b[i] )
-    }
-println("Общее количество лайков: $likes")
-
 }
 
 
